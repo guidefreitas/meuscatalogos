@@ -1,0 +1,76 @@
+﻿@using MeusCatalogos.Helpers;
+@model MeusCatalogos.ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item">
+            <img src="/content/images/slide/slide-01.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Crie seus catálogos gratuitamente!</h1>
+                    <p class="lead">Crie seus catálogos de produtos e mostre para todo mundo!</p>
+                    <a class="btn btn-large btn-primary" href="#">Quero criar meu catálogo agora!</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/content/images/slide/slide-02.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Simple e Elegante</h1>
+                    <p class="lead">Veja como é fácil criar seu catálogo agora mesmo!</p>
+                    <a class="btn btn-large btn-primary" href="#">Quero criar meu catálogo agora!</a>
+                </div>
+            </div>
+        </div>
+        <div class="item active">
+            <img src="/content/images/slide/slide-03.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Surpreenda seus clientes</h1>
+                    <p class="lead">Mostre seus produtos em seu tablet ou smartphone de forma fácil e elegante.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+</div>
+
+<div class="container marketing">
+    @foreach(var cat in @Model.Categories){
+    <div class="row">
+        <h2 class="catalog-category-name">@cat.Name</h2>
+        @if (cat.Catalogs.Count == 0)
+        {
+            <h3>Nenhum catálogo cadastrado nesta categoria</h3>
+        }else{
+            foreach (var catalog in cat.Catalogs.OrderByDescending(u => u.CreatedDateTime).Take(12))
+            {
+                <div class="span3">
+                <h3 class="catalog-name">@catalog.Name</h3>
+                <span class="catalog-owner-name">@catalog.UserCreated.Name</span>
+                <p>
+                    <img class="img" src="http://placehold.it/250x200">
+                </p>
+                </div>
+            }
+        }
+    </div>
+}
+</div>
+<!--  
+<div class="hero-unit">
+    <h1>Crie seus catálogos gratuitamente!</h1>
+    <p>Crie seus catálogos de produtos e mostre para todo mundo!</p>
+    <p><a href="#" class="btn btn-primary btn-large">Criar meu catálogo agora!</a></p>
+</div>
+-->
+<footer>
+</footer>

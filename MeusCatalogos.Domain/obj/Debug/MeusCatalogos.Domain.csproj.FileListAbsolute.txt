@@ -1,0 +1,4 @@
+C:\Users\guilherme\Desktop\Sociesc\MeusCatalogos\Web\MeusCatalogos\MeusCatalogos.Domain\bin\Debug\MeusCatalogos.Domain.dll
+C:\Users\guilherme\Desktop\Sociesc\MeusCatalogos\Web\MeusCatalogos\MeusCatalogos.Domain\bin\Debug\MeusCatalogos.Domain.pdb
+C:\Users\guilherme\Desktop\Sociesc\MeusCatalogos\Web\MeusCatalogos\MeusCatalogos.Domain\obj\Debug\MeusCatalogos.Domain.dll
+C:\Users\guilherme\Desktop\Sociesc\MeusCatalogos\Web\MeusCatalogos\MeusCatalogos.Domain\obj\Debug\MeusCatalogos.Domain.pdb
